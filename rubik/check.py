@@ -34,7 +34,8 @@ def _check(parms):
                         result['status'] = 'error: Matching Center Squares'
                         return result
                     colorAmounts[color][0] = colorAmounts[color][0] + 1
-                    colorAmounts[color][1] = centerSquare
+                    if centerSquare:
+                        colorAmounts[color][1] = centerSquare
             else:
                 
                 #Are there too many colors. At maximum there can only be 6 colors
