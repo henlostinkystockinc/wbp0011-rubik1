@@ -84,5 +84,13 @@ class CheckTest(TestCase):
         status = result.get('status', None)
         self.assertEqual(status, 'error: Matching Center Squares')
         
+    def test_check_070_ReturnErrorOnSpecialChars(self):
+        parm = {'op':'check',
+                'cube':'@@@@@@@@@rrrrrrrrrgggggggggoooooooooyyyyyyyyywwwwwwwww'}
+        result = check._check(parm)
+        self.assertIn('status', result)
+        status = result.get('status', None)
+        self.assertEqual(status, 'error: No Special Characters Allowed for Color')
+        
 if __name__ == '__main__':
     unittest.main()     
