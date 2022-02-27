@@ -1,4 +1,5 @@
 import rubik.cube as rubik
+import rubik.check as check
 
 def ClockwiseTurn(cube, indexes):
     cube = list(cube)
@@ -39,9 +40,13 @@ def CounterClockwiseTurn(cube, indexes):
 
 
 def _solve(parms):
+    
+    
+    
     result = {}
     encodedCube = parms.get('cube', None)       #get "cube" parameter if present
     rotates = parms.get('rotate', None)         #example rotations
+    
     result['status'] = 'ok'
     
     indexesDict = {
@@ -64,7 +69,7 @@ def _solve(parms):
                'edges' : [36, 9, 18, 27, 35, 8, 17, 26, 34, 7, 16, 25]}
     }
     
-    for turn in result['solution']:
+    for turn in rotates:
         indexes = indexesDict.get(turn.upper())
         if turn.isupper():
             encodedCube = ClockwiseTurn(encodedCube, indexes)

@@ -13,18 +13,17 @@ class solveTest(unittest.TestCase):
         
         
         #Unit Tests
-        def test_init():
-        	myCube = cube.Cube()
-        	self.assertIsInstance(myCube, cube.Cube)
-        	
-        def test_load():
-        	pass
-        	
-        def test_get():
-        	pass
+        def test_init(self):
+            myCube = cube.Cube()
+            self.assertIsInstance(myCube, cube.Cube)
+        
+        def test_load(self):
+            pass
+        
+        def test_get(self):
+            pass
         
         
 
     
     
-     

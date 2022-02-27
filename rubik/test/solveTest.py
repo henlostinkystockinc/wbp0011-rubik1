@@ -15,12 +15,12 @@ class solveTest(unittest.TestCase):
         #Unit Tests
         def test_check_010_FRotation(self):
             inputDict = {}
-            inputDict['cube'] = ''
+            inputDict['cube'] = 'bbbbbbbbbrrrrrrrrrgggggggggoooooooooyyyyyyyyywwwwwwwww'
             inputDict['rotate'] = 'F'
             inputDict['op'] = 'solve'
             
             expectedResult = {}
-            expectedResult['cube'] = ''
+            expectedResult['cube'] = 'bbbbbbbbbyrryrryrrgggggggggoowoowoowyyyyyyooorrrwwwwww'
             expectedResult['status'] = 'ok'
             
             actualResult = solve._solve(inputDict)
