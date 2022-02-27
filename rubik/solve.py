@@ -40,9 +40,8 @@ def CounterClockwiseTurn(cube, indexes):
 
 def _solve(parms):
     result = {}
-    encodedCube = "bbbbbbbbbrrrrrrrrrgggggggggoooooooooyyyyyyyyywwwwwwwww"
-    #encodedCube = parms.get('cube',None)       #get "cube" parameter if present
-    result['solution'] = 'FfRrBbLlUuDd'         #example rotations
+    encodedCube = parms.get('cube', None)       #get "cube" parameter if present
+    rotates = parms.get('rotate', None)         #example rotations
     result['status'] = 'ok'
     
     indexesDict = {
@@ -75,7 +74,3 @@ def _solve(parms):
     result['cube'] = encodedCube
                  
     return result
-
-
-result = _solve({})
-print("Cube " + result['cube'])

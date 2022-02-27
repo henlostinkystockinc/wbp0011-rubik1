@@ -1,19 +1,35 @@
-from unittest import TestCase
-import rubik.solve as solve 
 import unittest
+import rubik.solve as solve 
 
-class SolveTest(TestCase):
+
+class solveTest(unittest.TestCase):
         
-    def test_check_010(self):
-        parm = {'op':'check',
-                'cube':'bbbbbbbbbrrrrrrrrrgggggggggoooooooooyyyyyyyyywwwwwwwww',
-                'solution':'FfRrBbLlUuDd'}
-        result = solve._solve(parm)
-
-        status = result.get('status', None)
-        self.assertEqual(status, 'ok')
-
-
+        def setUp(self):
+            pass
         
-if __name__ == '__main__':
-    unittest.main()    
+        def tearDown(self):
+            pass
+        
+        
+        
+        #Unit Tests
+        def test_check_010_FRotation(self):
+            inputDict = {}
+            inputDict['cube'] = ''
+            inputDict['rotate'] = 'F'
+            inputDict['op'] = 'solve'
+            
+            expectedResult = {}
+            expectedResult['cube'] = ''
+            expectedResult['status'] = 'ok'
+            
+            actualResult = solve._solve(inputDict)
+            
+            self.assertEqual(expectedResult.get('cube'), actualResult.get('cube'))
+            self.assertEqual(expectedResult.get('status'), actualResult.get('status'))
+        
+        
+
+    
+    
+     
