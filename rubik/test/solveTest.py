@@ -13,6 +13,36 @@ class solveTest(unittest.TestCase):
         
         
         #Unit Tests
+        def test_check_Blank_Rotation_00_01(self):
+            inputDict = {}
+            inputDict['cube'] = 'bbbbbbbbbrrrrrrrrrgggggggggoooooooooyyyyyyyyywwwwwwwww'
+            inputDict['rotate'] = ''
+            inputDict['op'] = 'solve'
+            
+            expectedResult = {}
+            expectedResult['cube'] = 'bbbbbbbbbyrryrryrrgggggggggoowoowoowyyyyyyooorrrwwwwww'
+            expectedResult['status'] = 'ok'
+            
+            actualResult = solve._solve(inputDict)
+            
+            self.assertEqual(expectedResult.get('cube'), actualResult.get('cube'))
+            self.assertEqual(expectedResult.get('status'), actualResult.get('status'))
+            
+        def test_check_Wrong_Rotation_00_02(self):
+            inputDict = {}
+            inputDict['cube'] = 'bbbbbbbbbrrrrrrrrrgggggggggoooooooooyyyyyyyyywwwwwwwww'
+            inputDict['rotate'] = 'RrH'
+            inputDict['op'] = 'solve'
+            
+            expectedResult = {}
+            expectedResult['cube'] = ''
+            expectedResult['status'] = 'error: Unknown Rotates Provided'
+            
+            actualResult = solve._solve(inputDict)
+            
+            self.assertEqual(expectedResult.get('cube'), actualResult.get('cube'))
+            self.assertEqual(expectedResult.get('status'), actualResult.get('status'))
+            
         def test_check_F_Rotation_01_01(self):
             inputDict = {}
             inputDict['cube'] = 'bbbbbbbbbrrrrrrrrrgggggggggoooooooooyyyyyyyyywwwwwwwww'
@@ -35,7 +65,7 @@ class solveTest(unittest.TestCase):
             inputDict['op'] = 'solve'
             
             expectedResult = {}
-            expectedResult['cube'] = 'bbbbbbbbbwrrwrrwrrgggggggggooyooyooyyyyyyrrrooowwwwww'
+            expectedResult['cube'] = 'bbbbbbbbbwrrwrrwrrgggggggggooyooyooyyyyyyyrrrooowwwwww'
             expectedResult['status'] = 'ok'
             
             actualResult = solve._solve(inputDict)
@@ -331,7 +361,7 @@ class solveTest(unittest.TestCase):
             inputDict['op'] = 'solve'
             
             expectedResult = {}
-            expectedResult['cube'] = 'ooobbwbbwwwbrrbrrbrrrrggrgggggooyooyooobbwbbwyyyyybyyboogwwgwww'
+            expectedResult['cube'] = 'wrobbwbbwwwgrrgrrgyoyyggyggbbbooyooyryrrybryboogwwgwwo'
             expectedResult['status'] = 'ok'
             
             actualResult = solve._solve(inputDict)
@@ -342,15 +372,15 @@ class solveTest(unittest.TestCase):
         def test_check_RandRotation_08_02(self):
             inputDict = {}
             inputDict['cube'] = 'bbbbbbbbbrrrrrrrrrgggggggggoooooooooyyyyyyyyywwwwwwwww'
-            inputDict['rotate'] = 'Dlld'
+            inputDict['rotate'] = 'DLLrFl'
             inputDict['op'] = 'solve'
             
             expectedResult = {}
-            expectedResult['cube'] = 'rbbgbbbbbrrrrrrrrbggoggbooogggooogoowyywyywyywwwwwwyyy'
+            expectedResult['cube'] = 'rgrybbyyywrbyrbgrbwgowgwwrwywbgoogoogyroygyogbrrbwbowo'
             expectedResult['status'] = 'ok'
             
             actualResult = solve._solve(inputDict)
             
             self.assertEqual(expectedResult.get('cube'), actualResult.get('cube'))
             self.assertEqual(expectedResult.get('status'), actualResult.get('status'))
-    
+            

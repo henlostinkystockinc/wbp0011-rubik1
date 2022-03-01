@@ -18,10 +18,22 @@ class solveTest(unittest.TestCase):
             self.assertIsInstance(myCube, cube.Cube)
         
         def test_load(self):
-            pass
-        
+            myCube = cube.Cube()
+            myCube.load('bbbbbbbbbrrrrrrrrrgggggggggoooooooooyyyyyyyyywwwwwwwww', 'Rr', 'solve')
+            self.assertIsInstance(myCube, cube.Cube)
+            self.assertEqual('bbbbbbbbbrrrrrrrrrgggggggggoooooooooyyyyyyyyywwwwwwwww', myCube.cube)
+            self.assertEqual('Rr', myCube.rotates)
+            self.assertEqual('solve', myCube.op)
+                
+                        
         def test_get(self):
-            pass
+            myCube = cube.Cube()
+            myCube.load('bbbbbbbbbrrrrrrrrrgggggggggoooooooooyyyyyyyyywwwwwwwww', 'Rr', 'solve')
+            cubeParms = myCube.get()
+            self.assertIsInstance(myCube, cube.Cube)
+            self.assertEqual('bbbbbbbbbrrrrrrrrrgggggggggoooooooooyyyyyyyyywwwwwwwww', cubeParms.get('cube'))
+            self.assertEqual('Rr', cubeParms.get('rotates'))
+            self.assertEqual('solve', cubeParms.get('op'))
         
         
 
