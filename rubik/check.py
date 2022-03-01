@@ -14,6 +14,9 @@ def _check(parms):
         colorAmounts = {} #Dictionary Keeping track of Colors as keys with amount of each color on cube
         
         for index, color in enumerate(encodedCube):
+            if not (color.isalpha() or color.isdigit()):
+                result['status'] = 'error: No Special Characters Allowed for Color'
+                return result
             
             #Checks if index correlates with a center square
             if (index-4) % 9 == 0:
