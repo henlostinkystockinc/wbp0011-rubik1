@@ -92,8 +92,3 @@ def _solve(parms):
                 
                  
         return result
-
-
-params = {}
-params['cube'] = 'bbbbbbbbbrrrrrrrrrgggggggggoooooooooyyyyyyyyywwwwwwwww'
-params['rotate'] = 'uLfD'
