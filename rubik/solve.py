@@ -70,7 +70,7 @@ def _solve(parms):
             'U' : {'faces' : [37, 39, 45, 43, 38, 42, 44, 40],
                    'edges' : [12, 3, 30, 21, 11, 2, 29, 20, 10, 1, 28, 19]},
         
-            'D' : {'faces' : [46, 48, 54, 52, 47, 51, 53, 48],
+            'D' : {'faces' : [46, 48, 54, 52, 47, 51, 53, 49],
                    'edges' : [16, 25, 34, 7, 17, 26, 35, 8, 18, 27, 36, 9]}
         }
         
@@ -84,10 +84,17 @@ def _solve(parms):
                     encodedCube = ClockwiseTurn(encodedCube, indexes)
                 elif turn.islower():
                     encodedCube = CounterClockwiseTurn(encodedCube, indexes)
-                result['cube'] = encodedCube       
+                result['cube'] = encodedCube
+                print(encodedCube + "Turn " + turn)      
             else:
                 result['status'] = 'error: Unknown Rotates Provided'
                 result['cube'] = ''
                 
                  
         return result
+
+
+params = {}
+params['cube'] = 'bbbbbbbbbrrrrrrrrrgggggggggoooooooooyyyyyyyyywwwwwwwww'
+params['rotate'] = 'FlFLfLurDRdB'
+result = _solve(params)
