@@ -1,4 +1,3 @@
-from unittest import TestCase
 import rubik.check as check 
 import unittest
 
