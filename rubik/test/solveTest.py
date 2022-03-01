@@ -384,3 +384,18 @@ class solveTest(unittest.TestCase):
             self.assertEqual(expectedResult.get('cube'), actualResult.get('cube'))
             self.assertEqual(expectedResult.get('status'), actualResult.get('status'))
             
+        def test_check_RandRotation_08_03(self):
+            inputDict = {}
+            inputDict['cube'] = 'bbbbbbbbbrrrrrrrrrgggggggggoooooooooyyyyyyyyywwwwwwwww'
+            inputDict['rotate'] = 'uLfD'
+            inputDict['op'] = 'solve'
+            
+            expectedResult = {}
+            expectedResult['cube'] = 'rbbrbbooowggwrryyyoowggwrrrooyooyggwgyygyygrrbbbwwbwwb'
+            expectedResult['status'] = 'ok'
+            
+            actualResult = solve._solve(inputDict)
+            
+            self.assertEqual(expectedResult.get('cube'), actualResult.get('cube'))
+            self.assertEqual(expectedResult.get('status'), actualResult.get('status'))
+            
