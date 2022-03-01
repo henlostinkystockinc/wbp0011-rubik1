@@ -96,5 +96,5 @@ def _solve(parms):
 
 params = {}
 params['cube'] = 'bbbbbbbbbrrrrrrrrrgggggggggoooooooooyyyyyyyyywwwwwwwww'
-params['rotate'] = 'FlFLfLurDRdB'
+params['rotate'] = 'uLfD'
 result = _solve(params)
