@@ -84,8 +84,7 @@ def _solve(parms):
                     encodedCube = ClockwiseTurn(encodedCube, indexes)
                 elif turn.islower():
                     encodedCube = CounterClockwiseTurn(encodedCube, indexes)
-                result['cube'] = encodedCube
-                print(encodedCube + "Turn " + turn)      
+                result['cube'] = encodedCube    
             else:
                 result['status'] = 'error: Unknown Rotates Provided'
                 result['cube'] = ''
