@@ -409,7 +409,6 @@ class solveTest(unittest.TestCase):
             expectedResult['cube'] = 'rorybwgrrbbobrwgybggyggrwbrogbyooyoobrwyyoygwywwwwbgro'
             expectedResult['status'] = 'ok'
             
-            
             actualResult = solve._solve(inputDict)
             
             self.assertEqual(expectedResult.get('cube'), actualResult.get('cube'))
