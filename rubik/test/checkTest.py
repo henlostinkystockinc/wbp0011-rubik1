@@ -92,5 +92,3 @@ class CheckTest(TestCase):
         status = result.get('status', None)
         self.assertEqual(status, 'error: No Special Characters Allowed for Color')
         
-if __name__ == '__main__':
-    unittest.main()     
